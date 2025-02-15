@@ -1,2 +1,2 @@
-# symmetrical-enigma
-Pokémon Platinum decomp romhack
+# Pokémon Sparking Platinum
+## A Pokémon Platinum Decomp Romhack
