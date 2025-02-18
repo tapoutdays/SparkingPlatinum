@@ -8,7 +8,7 @@
 * [Gift Pokémon, Special Encounters](pokemon/special.md)
 * [In-Game trades](pokemon/trades.md)
 * [Legendary Pokémon](pokemon/legendary.md)
-#### Areas (Locations, Cities, Routes, etc.)
+#### Areas
 * [General Area Changes](areas/general.md)
 * [Specific Areas](areas/areas.md)
 #### Trainer Information
