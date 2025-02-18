@@ -6,41 +6,15 @@
 	<title>Pokémon Sparking Platinum Wiki</title>
 	<link rel="stylesheet" href="main.css"/>
 	<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+	<script src="markdownHandler.js"></script>
+	<script src="dropdownHandler.js"></script>
 </head>
 <body>
 	<div class="wiki">
-	<aside id="sidebar">Carregando...</aside>
+	<aside id="sidebar">Loading...</aside>
 	<script>
-		async function loadMarkdown(file, elementId){
-			try {
-				const response = await fetch(file);
-				if (!response.ok) throw new Error("Arquivo não encontrado");
-				const text = await response.text();
-				document.getElementById(elementId).innerHTML = marked.parse(text);
-			} catch (error) {
-				document.getElementById(elementId).innerHTML = "<p>Erro ao carregar o arquivo.</p>";
-				console.error(error);
-			}
-		}
 		// Load sidebar.md
 		loadMarkdown("wiki/sidebar.md", "sidebar");
-		// Render drop down lists in sidebar
-		function setupDropdowns() {
-				document.querySelectorAll("#sidebar h4").forEach(header => {
-					let nextElement = header.nextElementSibling;
-					while (nextElement && nextElement.tagName !== "UL" && nextElement.tagName !== "OL") {
-						nextElement = nextElement.nextElementSibling;
-				}
-					if (nextElement) {
-						nextElement.classList.add("dropdown-content");
-						header.addEventListener("click", function () {
-							nextElement.classList.toggle("open");						
-						});
-					}
-				});
-				// Show sidebar after dropdowns are ready
-				document.getElementById("sidebar").classList.add("ready");
-			};
 		// Wait for Markdown to load before running dropdown script
 		setTimeout(setupDropdowns, 500);
 	</script>
